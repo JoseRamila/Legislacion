@@ -16,8 +16,7 @@ token = f.encrypt(b'Mensaje cifrado compartido para Rashyd')
 print(token)
 
 # Descifrar
-#des = f.decrypt(token)
+des = f.decrypt(token)
 
-#print(des)
-print("hola")
+print(des)
 
