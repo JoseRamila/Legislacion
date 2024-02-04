@@ -10,7 +10,7 @@ clave = Fernet.generate_key()
 f = Fernet(clave)
 
 # Encriptamos el mensaje
-token = f.encrypt(b'El Rasho desde que trabaja en Accenture es muy agrandado xD')
+token = f.encrypt(b'Mensaje cifrado compartido para Rashyd')
 
 # Mensaje Cifrado
 print(token)
