@@ -7,28 +7,28 @@ p = 2410312426921032588552076022197566074856950548502459942654116941958108831682
 g = 2
 
 # Generación de llaves privadas aleatorias
-alice_private_key = random.randint(0, p)
-bob_private_key = random.randint(0, p)  
-eve_private_key = random.randint(0, p)
+a_p_k = random.randint(0, p)
+b_p_k = random.randint(0, p)  
+e_p_k = random.randint(0, p)
 
 # Intercambio de claves públicas
-alice_public_key = pow(g, alice_private_key, p)
-bob_public_key = pow(g, bob_private_key, p)
-eve_public_key = pow(g, eve_private_key, p)
+alice_public_key = pow(g, a_p_k, p)
+bob_public_key = pow(g, b_p_k, p)
+eve_public_key = pow(g, e_p_k, p)
 
 # Cálculo de llaves compartidas
-alice_eve_key = pow(eve_public_key, alice_private_key, p)
-bob_eve_key = pow(eve_public_key, bob_private_key, p)
+alice_eve_key = pow(eve_public_key, a_p_k, p)
+bob_eve_key = pow(eve_public_key, b_p_k, p)
 
-print("Llave compartida Alice-Eve:", alice_eve_key)
-print("Llave compartida Bob-Eve:", bob_eve_key)
+print("Llave compartida Alice y Eve:", alice_eve_key)
+print("Llave compartida Bob y Eve:", bob_eve_key)
 
 # Intercambio de mensajes
-message_a = "Hola Bob, soy Alice"  
-message_b = "Hola Alice, aquí Bob"
+m_a = "Hola Bob, soy Alice"  
+m_b = "Hola Alice, soy Bob"
 
-print("Mensaje de Alice:", message_a)
-print("Mensaje interceptado por Eve:", message_a) 
+print("Mensaje de Alice:", m_a)
+print("Mensaje interceptado por Eve:", m_a) 
 
-print("Mensaje de Bob:", message_b)
-print("Mensaje interceptado por Eve:",message_b)
+print("Mensaje de Bob:", m_b)
+print("Mensaje interceptado por Eve:",m_b)
